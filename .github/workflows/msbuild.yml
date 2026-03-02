@@ -67,7 +67,7 @@ jobs:
         
   build:
     name: build-job
-    runs-on: windows-latest
+    runs-on: windows-2025-vs2026
 
     strategy:
       matrix:
@@ -95,10 +95,10 @@ jobs:
       uses: snickerbockers/submodules-init@v4
 
     - name: setup-msbuild
-      uses: microsoft/setup-msbuild@v1.3.1
+      uses: microsoft/setup-msbuild@v2
       with:
         # Version of Visual Studio to search; defaults to latest if not specified
-        # vs-version: '[17.6, 17.7)'
+        vs-version: '[18.0, 19.0)'
         # The preferred processor architecture of MSBuild. Can be either "x86", "x64", or "arm64". "x64" is only available from Visual Studio version 17.0 and later.
         msbuild-architecture: "x64"
 
